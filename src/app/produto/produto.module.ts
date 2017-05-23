@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -11,14 +12,15 @@ import { ProdutoComponent } from './produto.component';
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         ProdutoRoutingModule
     ],
     exports: [],
     declarations: [
         ProdutoComponent,
         ProdutoDetalheComponent,
-        ProdutoNaoEncontradoComponent,
-        ProdutoFormComponent
+        ProdutoFormComponent,
+        ProdutoNaoEncontradoComponent
     ],
     providers: [
         ProdutoService

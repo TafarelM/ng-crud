@@ -8,23 +8,12 @@ import { ProdutoComponent } from './produto/produto.component';
 
 const APP_ROUTES: Routes = [
     {
-        path: 'produto',
-        component: ProdutoComponent
-    },
-    {
-        path: 'produto/:id',
-        component: ProdutoComponent
-    },
-    {
         path: 'home',
         component: HomeComponent
     },
     {
         path: '', redirectTo: 'home',
         pathMatch: 'full'
-    },
-    {
-        path: '**', component: PgNaoEncontradaComponent
     }
 ];
 

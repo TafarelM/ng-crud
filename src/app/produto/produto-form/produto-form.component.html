@@ -1,3 +1,29 @@
-<p>
-  produto-form works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Lista de Produtos</div>
+
+  <div class="panel-body">
+    <form name="frmCadastroProdutos">
+
+      <div class="form-group">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" class="form-control" ng-model="produto.id">
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" class="form-control" ng-model="produto.descricao">
+      </div>
+
+      <hr>
+
+      <button ng-click="salvar(produto)" ng-disabled="frmCadastroProdutos.$invalid" class="btn btn-default" type="button">Salvar
+            </button>
+
+      <button ng-click="salvarCadastrarNovo(produto)" ng-disabled="frmCadastroProdutos.$invalid" class="btn btn-default" type="button">Salvar e Cadastrar Novo
+            </button>
+
+      <button type="button" class="btn btn-default" ng-click="cancelar()">Cancelar</button>
+    </form>
+  </div>
+
+</div>
