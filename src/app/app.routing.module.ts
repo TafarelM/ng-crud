@@ -8,11 +8,15 @@ import { ProdutoComponent } from './produto/produto.component';
 
 const APP_ROUTES: Routes = [
     {
+        path: 'produto',
+        loadChildren: 'app/produto/produto.module#ProdutoModule'
+    },
+    {
         path: 'home',
         component: HomeComponent
     },
     {
-        path: '', redirectTo: 'home',
+        path: '', redirectTo: '/home',
         pathMatch: 'full'
     }
 ];

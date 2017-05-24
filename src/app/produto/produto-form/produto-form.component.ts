@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoFormComponent implements OnInit {
 
+  produto: any = {
+    nome: null
+  };
+
+  onSubmit(form) {
+    console.log(form);
+  }
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  verificaValidTouched(campo) {
+    return !campo.valid && campo.touched;
+  }
+
+  aplicaCssErro(campo) {
+    return {
+    'has-error': this.verificaValidTouched(campo),
+    'has-feedback': this.verificaValidTouched(campo)
+    };
   }
 
 }

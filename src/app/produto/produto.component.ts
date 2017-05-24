@@ -27,6 +27,8 @@ export class ProdutoComponent implements OnInit, OnDestroy {
      this.inscricao = this.activatedRoute.queryParams.subscribe((queryParams: any) => {
       this.pagina = queryParams['pagina'];
     });
+
+  this.pagina = 1;
   }
 
   ngOnDestroy() {
@@ -43,6 +45,7 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     this.router.navigate(['/produto'], {
       queryParams: {'pagina': --this.pagina}
     });
+
   }
 
 }

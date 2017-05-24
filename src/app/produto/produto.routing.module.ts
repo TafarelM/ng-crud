@@ -1,29 +1,17 @@
+import { ProdutoFormComponent } from './produto-form/produto-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule, Component, ModuleWithProviders } from '@angular/core';
 
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
-import { ProdutoFormComponent } from './produto-form/produto-form.component';
 import { ProdutoComponent } from './produto.component';
 
-const PRODUTO_ROUTES: Routes = [
+const PRODUTO_ROUTES = [
     {
-        path: 'produto',
-        component: ProdutoComponent
+        path: '',
+        component: ProdutoComponent,
     },
     {
-        path: 'produto/novo',
-        component: ProdutoFormComponent
-    },
-    {
-        path: 'produto/:id',
-        component: ProdutoDetalheComponent
-    },
-    {
-        path: 'produto/editar/:id',
-        component: ProdutoFormComponent
-    },
-    {
-        path: 'produto/excluir/:id',
+        path: 'novo',
         component: ProdutoFormComponent
     }
 ];

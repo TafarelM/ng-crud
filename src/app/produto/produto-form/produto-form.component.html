@@ -1,28 +1,27 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Lista de Produtos</div>
+  <div class="panel-heading">Cadastro de Produtos</div>
 
   <div class="panel-body">
-    <form name="frmCadastroProdutos">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
 
-      <div class="form-group">
-        <label for="codigo">Código:</label>
-        <input type="text" id="codigo" name="codigo" class="form-control" ng-model="produto.id">
+      <div class="form-group" [ngClass]="aplicaCssErro(descricao)">
+        <div class="col-sm-12">
+          <label for="descricao" class="control-label">Nome</label>
+        </div>
+
+        <div class="col-sm-12">
+          <input type="text" id="descricao" class="form-control" placeholder="Descrição" name="descricao"
+          [(ngModel)]="produto.descricao" required #descricao="ngModel">
+          
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched(descricao)" msgErro="Descrição é um campo obrigatório.">
+          </app-campo-control-erro>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" class="form-control" ng-model="produto.descricao">
-      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 
-      <hr>
+      <app-form-debug [form]="f"></app-form-debug>
 
-      <button ng-click="salvar(produto)" ng-disabled="frmCadastroProdutos.$invalid" class="btn btn-default" type="button">Salvar
-            </button>
-
-      <button ng-click="salvarCadastrarNovo(produto)" ng-disabled="frmCadastroProdutos.$invalid" class="btn btn-default" type="button">Salvar e Cadastrar Novo
-            </button>
-
-      <button type="button" class="btn btn-default" ng-click="cancelar()">Cancelar</button>
     </form>
   </div>
 

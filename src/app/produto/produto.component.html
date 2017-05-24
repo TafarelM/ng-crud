@@ -1,67 +1,67 @@
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Lista de Produtos</h4>
-    </div>
-    <div class="panel-body">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Lista de Produtos</h4>
+  </div>
+  <div class="panel-body">
 
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">
-                  <i class="glyphicon glyphicon-search"></i>
-              </span>
-              <input class="form-control" placeholder="Qual Produto você está procurando?" autofocus="autofocus">
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="form-group">
-            <a href="produto/novo">
-              <button type="button" class="btn btn-default pull-right">Novo 
-                  <i class="glyphicon glyphicon-plus"></i>
-              </button>
-            </a>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+            <input class="form-control" placeholder="Qual Produto você está procurando?" autofocus="autofocus">
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="panel-body">
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover">
-          <thead>
-            <tr>
-              <th class="text-center col-md-1">#</th>
-              <th>Decrição</th>
-              <th class="col-md-1"></th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let produto of produtos" [routerLink]="['/produto', produto.id]">
-            <tr>
-              <td>{{ produto.id }}</td>
-              <td>{{ produto.nome }}</td>
-
-              <td class="text-center">
-                <a href="#" class="btn btn-link btn-xs" title="Editar" [routerLink]="['/produto/editar', produto.id]">                
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </a>
-                <a href="#" class="btn btn-link btn-xs" title="Excluir" [routerLink]="['/produto/excluir', produto.id]">
-                    <span class="glyphicon glyphicon-remove"></span>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <a routerLink="novo">
+            <button type="button" class="btn btn-default pull-right">Novo 
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-
   </div>
 
-  <button (click)="paginaAnterior()">Anterior</button>
-  <button (click)="proximaPagina()">Proximo</button>
-  <p>Página: {{ pagina }}</p>
+  <div class="panel-body">
+    <table class="table-responsive table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center col-md-1">#</th>
+          <th class="col-md-9">Decrição</th>
+          <th class="col-md-2"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let produto of produtos" [routerLink]="['/produto', produto.id]">
+        <tr>
+          <td>{{ produto.id }}</td>
+          <td>{{ produto.nome }}</td>
+
+          <td class="text-center">
+            <a class="btn btn-link btn-xs" title="Excluir" [routerLink]="['/produto/detalhe', produto.id]">
+              <span class="glyphicon glyphicon-search"></span>
+            </a>
+            <a class="btn btn-link btn-xs" title="Editar" [routerLink]="['/produto/editar', produto.id]">                
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <a class="btn btn-link btn-xs" title="Excluir" [routerLink]="['/produto/excluir', produto.id]">
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
+
+<button (click)="paginaAnterior()">Anterior</button>
+<button (click)="proximaPagina()">Proximo</button>
+<p>Página: {{ pagina }}</p>
+
+<router-outlet></router-outlet>
