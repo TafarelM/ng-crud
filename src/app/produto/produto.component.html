@@ -33,14 +33,16 @@
       <thead>
         <tr>
           <th class="text-center col-md-1">#</th>
-          <th class="col-md-9">Decrição</th>
+          <th class="col-md-8">Decrição</th>
+          <th class="col-md-1">Valor</th>
           <th class="col-md-2"></th>
         </tr>
       </thead>
       <tbody *ngFor="let produto of produtos" [routerLink]="['/produto/detalhe', produto.id]">
         <tr>
           <td>{{ produto.id }}</td>
-          <td>{{ produto.nome }}</td>
+          <td>{{ produto.descricao }}</td>
+          <td>{{ produto.valor | currency:'BRL':true:'1.2-2' }}</td>
 
           <td class="text-center">
             <a class="btn btn-link btn-xs" title="Excluir" [routerLink]="['/produto/detalhe', produto.id]">

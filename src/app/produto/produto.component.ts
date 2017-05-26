@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
+import { Produto } from './produto';
 import { ProdutoService } from './produto.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ProdutoService } from './produto.service';
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
 
-  produtos: any[];
+  produtos: Produto[] = [];
   pagina: number;
   inscricao: Subscription;
 
@@ -22,7 +23,7 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.produtos = this.produtoService.getProduto();
+    this.produtos = this.produtoService.getProdutos();
 
      this.inscricao = this.activatedRoute.queryParams.subscribe((queryParams: any) => {
       this.pagina = queryParams['pagina'];

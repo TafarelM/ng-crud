@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PgNaoEncontradaComponent } from './pg-nao-encontrada/pg-nao-encontrada.component';
+import { FooterComponent } from './footer/footer.component';
 
 // import { AlertModule } from 'ngx-bootstrap';
 
@@ -15,7 +16,8 @@ import { PgNaoEncontradaComponent } from './pg-nao-encontrada/pg-nao-encontrada.
   declarations: [
     AppComponent,
     HomeComponent,
-    PgNaoEncontradaComponent
+    PgNaoEncontradaComponent,
+    FooterComponent
   ],
   imports: [
     // AlertModule.forRoot(),

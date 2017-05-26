@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Produto } from './../produto';
+
 @Component({
   selector: 'app-produto-form',
   templateUrl: './produto-form.component.html',
@@ -8,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProdutoFormComponent implements OnInit {
 
   produto: any = {
-    nome: null
+    descricao: null,
+    valor: null
   };
 
   onSubmit(form) {
