@@ -13,6 +13,18 @@ const PRODUTO_ROUTES = [
     {
         path: 'novo',
         component: ProdutoFormComponent
+    },
+    {
+        path: 'detalhe/:id',
+        component: ProdutoFormComponent
+    },
+    {
+        path: 'editar/:id',
+        component: ProdutoFormComponent
+    },
+    {
+        path: 'excluir/:id',
+        component: ProdutoFormComponent
     }
 ];
 

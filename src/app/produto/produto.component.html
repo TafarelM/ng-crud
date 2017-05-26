@@ -37,7 +37,7 @@
           <th class="col-md-2"></th>
         </tr>
       </thead>
-      <tbody *ngFor="let produto of produtos" [routerLink]="['/produto', produto.id]">
+      <tbody *ngFor="let produto of produtos" [routerLink]="['/produto/detalhe', produto.id]">
         <tr>
           <td>{{ produto.id }}</td>
           <td>{{ produto.nome }}</td>
@@ -54,8 +54,31 @@
             </a>
           </td>
         </tr>
-      </tbody>
+      </tbody>      
     </table>
+  </div>
+
+  <div class="col-md-12">
+    <nav aria-label="...">
+      <ul class="pagination">
+
+        <li class="disabled">
+          <a (click)="paginaAnterior()" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+
+        <li class="active">
+          <a>{{ pagina }}<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="disabled">
+          <a (click)="proximaPagina()" aria-label="Next">     
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
 </div>
